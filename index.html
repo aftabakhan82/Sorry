@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Sorry Mine Babe 💔</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(120deg, #ffd6e8, #ff9fcf);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #fff0f5, #ffc0cb);
+      border-radius: 30px;
+      padding: 3rem 3.5rem;
+      max-width: 500px;
+      width: 90%;
+      box-shadow:
+        0 8px 15px rgba(233, 30, 99, 0.3),
+        0 0 40px rgba(233, 30, 99, 0.15);
+      border: 3px solid #e91e63;
+      color: #880e4f;
+      text-align: center;
+      cursor: pointer;
+      transition: 
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease,
+        background 0.4s ease,
+        color 0.4s ease;
+      user-select: none;
+    }
+
+    .card:active,
+    .card.active {
+      transform: scale(1.08);
+      border-color: #ff4081;
+      box-shadow:
+        0 15px 40px rgba(255, 64, 129, 0.7),
+        0 0 80px rgba(255, 64, 129, 0.4);
+      background: linear-gradient(145deg, #ffb6c1, #ff69b4);
+      color: #ff1e71;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 58px;
+      color: #c2185b;
+      margin-bottom: 25px;
+      transition: color 0.4s ease;
+    }
+
+    .card:active h1,
+    .card.active h1 {
+      color: #f50057;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 1.7;
+      color: #880e4f;
+      transition: color 0.4s ease;
+      white-space: pre-line;
+    }
+
+    .card:active p,
+    .card.active p {
+      color: #ff1e71;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 42px;
+      }
+
+      p {
+        font-size: 18px;
+      }
+
+      .card {
+        padding: 2rem 2.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card" id="sorryCard" tabindex="0" role="button" aria-pressed="false">
+    <h1>Sorry Mine Babe 💔</h1>
+    <p>
+      I know I hurt you, and mujhe aisa nahi bolna chahiye tha
+      <br />
+      Mujhse galti ho gayi, but meri feelings toh sachchi hain na... 💫
+      <br />
+      Please forgive this pagal ,
+      <br />
+      . 😔❤️
+      <br />
+      You're my everything — meri kuku, meri panda, mera sukoon. 💖
+    </p>
+  </div>
+
+  <script>
+    const card = document.getElementById('sorryCard');
+    card.addEventListener('click', () => {
+      card.classList.toggle('active');
+      const pressed = card.getAttribute('aria-pressed') === 'true';
+      card.setAttribute('aria-pressed', !pressed);
+    });
+
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        card.click();
+      }
+    });
+  </script>
+</body>
+
+</html>
